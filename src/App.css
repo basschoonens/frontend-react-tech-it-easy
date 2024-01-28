@@ -1,29 +1,46 @@
-body {
-    font-family: 'Arial', sans-serif;
+*root{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.heading {
-    text-align: center;
+body{
 }
 
-.container {
+.outer-stats-container{
+    border: solid red;
     display: flex;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
-    text-align: center;
-    background-color: #f5f5f5;
-    color:lightgreen;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 20px;
 }
 
-.box1 {
-    text-align: center;
-    margin-top: 20px;
-    padding: 55px;
-    border-radius: 8px;
-    color: white;
+.sold-stat{
+    border: solid green;
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    padding: 20px;
+    width: auto;
+}
+
+.purchased-stat{
+    border: solid blue;
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    padding: 20px;
+    width: auto;
+}
+
+.stock-stat{
+    border: solid orange;
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    padding: 20px;
+    width: auto;
 }
 
 .soldCount {
@@ -39,32 +56,58 @@ body {
 }
 
 .outer-container {
-    border: solid red;
+    border: solid purple;
+    background-color: lightgrey;
+
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+
+    flex-basis: 1200px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin: 20px;
+}
+
+.tv-image-wrapper {
+    border: solid red;
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding: 20px;
+}
+
+.tv-image{
+    width: 100%;
 }
 
 .inner-container {
     border: solid blue;
+
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    flex-basis: 480px;
+    flex-grow: 0;
+    flex-shrink: 0;
     padding: 20px;
-    width: auto;
 }
 
 .feature-buttons{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    padding: 20px;
-}
+    justify-content: flex-start;
+    gap: 10px;
 
-img{
-    width: 30%;
-    height: 30%;
+    align-items: baseline;
 }
 
 .buttons{
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
 }
