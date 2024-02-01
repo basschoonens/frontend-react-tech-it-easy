@@ -1,6 +1,5 @@
 import './App.css';
 import {inventory, bestSellingTv} from "./constants/inventory.js";
-import totalStock from "./helpers/totalStock.js";
 import tvDescription from "./helpers/tvDescription.js";
 import tvPrice from "./helpers/tvPrice.js";
 import screenSize from "./helpers/screenSize.js";

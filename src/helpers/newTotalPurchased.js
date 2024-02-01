@@ -10,10 +10,12 @@
 // }
 
 
-export default function newTotalPurchased(products) {
+function newTotalPurchased(productArray) {
     let totalTvPurchased = 0;
-    products.forEach(products => {
-        totalTvPurchased += products.originalStock;
+    productArray.forEach(product => {
+        totalTvPurchased += product.originalStock;
     });
     return totalTvPurchased;
 }
+
+export default newTotalPurchased;

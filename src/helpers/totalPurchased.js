@@ -12,17 +12,17 @@
 //
 // export default totalPurchased;
 
-import totalTvStock from "./newTotalStock.js";
-import totalTvSold from "./newTotalSold.js";
+// import totalTvStock from "./newTotalStock.js";
+// import totalTvSold from "./newTotalSold.js";
+//
+// // PSEUDO-CODE
+// // Gebruik de twee andere helperfuncties het verschil te berekenen
+// // geef die waarde terug
+//
+// function newTotalPurchased(productArray) {
+//     const initialProducts = totalTvStock(productArray);
+//     const soldProducts = totalTvSold(productArray);
+//     return initialProducts - soldProducts;
+// }
 
-// PSEUDO-CODE
-// Gebruik de twee andere helperfuncties het verschil te berekenen
-// geef die waarde terug
-
-function newTotalPurchased(productArray) {
-    const initialProducts = totalTvStock(productArray);
-    const soldProducts = totalTvSold(productArray);
-    return initialProducts - soldProducts;
-}
-
-export default newTotalPurchased;
+// export default newTotalPurchased;
