@@ -1,13 +1,14 @@
 import './App.css';
 import {inventory, bestSellingTv} from "./constants/inventory.js";
-import soldCount from "./helpers/totalSold.js";
-import purchasedCount from "./helpers/totalPurchased.js";
 import totalStock from "./helpers/totalStock.js";
 import tvDescription from "./helpers/tvDescription.js";
 import tvPrice from "./helpers/tvPrice.js";
 import screenSize from "./helpers/screenSize.js";
 import check from "./assets/check.png";
 import minus from "./assets/minus.png";
+import newTotalSold from "./helpers/newTotalSold.js";
+import newTotalPurchased from "./helpers/newTotalPurchased.js";
+import newTotalStock from "./helpers/newTotalStock.js";
 
 function App() {
 
@@ -22,15 +23,15 @@ function App() {
             <div className="outer-stats-container">
                 <div className="sold-stat stats">
                     <p>Aantal verkochte producten</p>
-                    <p className="soldCount">{soldCount}</p>
+                    <p className="soldCount">{newTotalSold(inventory)}</p>
                 </div>
                 <div className="purchased-stat stats">
                     <p>Aantal ingekochte producten</p>
-                    <p className="purchasedCount">{purchasedCount}</p>
+                    <p className="purchasedCount">{newTotalPurchased(inventory)}</p>
                 </div>
                 <div className="stock-stat stats">
                     <p>Aantal te verkopen producten</p>
-                    <p className="totalStock">{totalStock}</p>
+                    <p className="totalStock">{newTotalStock(inventory)}</p>
                 </div>
             </div>
             <p>Best verkochte tv</p>

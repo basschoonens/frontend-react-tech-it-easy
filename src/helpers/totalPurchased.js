@@ -1,16 +1,28 @@
-import {inventory, bestSellingTv} from '../constants/inventory.js';
+//
+// import newTotalStock from "./newTotalStock.js";
+// import newTotalSold from "./newTotalSold.js";
+//
+// // Hoeveel tv's zijn er ingekocht.
+//
+// function totalPurchased(productArray) {
+//     const initialProducts = newTotalStock(productArray);
+//     const soldProducts = newTotalSold(productArray);
+//     return initialProducts - soldProducts;
+// }
+//
+// export default totalPurchased;
 
-// Hoeveel tv's zijn er ingekocht.
+import totalTvStock from "./newTotalStock.js";
+import totalTvSold from "./newTotalSold.js";
 
-const purchasedCount = totalPurchased();
+// PSEUDO-CODE
+// Gebruik de twee andere helperfuncties het verschil te berekenen
+// geef die waarde terug
 
-function totalPurchased() {
-
-        let totalTvPurchased = 0;
-        for (let i = 0; i < inventory.length; i++) {
-            totalTvPurchased += inventory[i].originalStock;
-        }
-        return totalTvPurchased + bestSellingTv.originalStock;
+function newTotalPurchased(productArray) {
+    const initialProducts = totalTvStock(productArray);
+    const soldProducts = totalTvSold(productArray);
+    return initialProducts - soldProducts;
 }
 
-export default purchasedCount;
+export default newTotalPurchased;
