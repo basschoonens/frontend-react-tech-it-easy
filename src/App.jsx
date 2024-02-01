@@ -2,12 +2,12 @@ import './App.css';
 import {inventory, bestSellingTv} from "./constants/inventory.js";
 import tvDescription from "./helpers/tvDescription.js";
 import tvPrice from "./helpers/tvPrice.js";
-import screenSize from "./helpers/screenSize.js";
 import check from "./assets/check.png";
 import minus from "./assets/minus.png";
 import newTotalSold from "./helpers/newTotalSold.js";
 import newTotalPurchased from "./helpers/newTotalPurchased.js";
 import newTotalStock from "./helpers/newTotalStock.js";
+import screenSizeString from "./helpers/screenSize.js";
 
 function App() {
 
@@ -39,9 +39,9 @@ function App() {
                             <img className="tv-image" src={bestSellingTv.sourceImg} alt={"bestselling-tv"}/>
                     </span>
                 <article className="inner-tv-container">
-                    <h1>{tvDescription}</h1>
-                    <h2>{tvPrice}</h2>
-                    <h3>{screenSize}</h3>
+                    <h1>{tvDescription(bestSellingTv)}</h1>
+                    <h2>{tvPrice(bestSellingTv)}</h2>
+                    <h3>{screenSizeString(bestSellingTv)}</h3>
                     <div className="features-container">
                         <img className="icon" src={check}/><p>wifi</p>
                         <img className="icon" src={minus}/><p>speech</p>
