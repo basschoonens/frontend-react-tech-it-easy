@@ -51,12 +51,8 @@ function App() {
     // sort the array of tv's by original stock - sold = 0
     // display the tv's that are out of stock
 
-    function showOutOfStockImage() {
-        inventory.forEach(tv => {
-            if (tv.originalStock - tv.sold === 0) {
-                tv.innerHTML += <img src={outOfStockImg} alt="out of stock"/>
-            }
-        })
+    function isOutOfStock(tvItem) {
+        return tvItem && tvItem.originalStock && (tvItem.originalStock - tvItem.sold) === 0;
     }
 
 
@@ -82,25 +78,31 @@ function App() {
             </div>
         </div>
         <p>Best verkochte tv</p>
-        <div className="outer-tv-container">
-                    <span className="tv-image-wrapper">
-                            <img className="tv-image" src={bestSellingTv.sourceImg} alt={"bestselling-tv"}/>
-                    </span>
-            <article className="inner-tv-container">
-                <h1>{tvDescription(bestSellingTv)}</h1>
-                <h2>{tvPrice(bestSellingTv)}</h2>
-                <h3>{calAvailableSizes(bestSellingTv)}</h3>
-                <div className="features-container">
-                    <ul>
-                        <li><img className="icon" src={check} alt="icon"/>wifi</li>
-                        <li><img className="icon" src={minus} alt="icon"/>speech</li>
-                        <li><img className="icon" src={check} alt="icon"/>hdr</li>
-                        <li><img className="icon" src={check} alt="icon"/>bluetooth</li>
-                        <li><img className="icon" src={minus} alt="icon"/>ambilight</li>
-                    </ul>
-                </div>
-            </article>
-        </div>
+        {inventory.map((tvItem, index) => (
+            <div key={index} className="outer-tv-container">
+                <span className="tv-image-wrapper">
+                   {isOutOfStock() ? (
+                       <img className="tv-image" src={outOfStockImg} alt="out of stock" />
+                   ) : (
+                       <img className="tv-image" src={tvItem.sourceImg} alt="inventory-tv" />
+                   )}
+                </span>
+                <article className="inner-tv-container">
+                    <h1>{tvDescription(bestSellingTv)}</h1>
+                    <h2>{tvPrice(bestSellingTv)}</h2>
+                    <h3>{calAvailableSizes(bestSellingTv)}</h3>
+                    <div className="features-container">
+                        <ul>
+                            <li><img className="icon" src={check} alt="icon"/>wifi</li>
+                            <li><img className="icon" src={minus} alt="icon"/>speech</li>
+                            <li><img className="icon" src={check} alt="icon"/>hdr</li>
+                            <li><img className="icon" src={check} alt="icon"/>bluetooth</li>
+                            <li><img className="icon" src={minus} alt="icon"/>ambilight</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        ))}
         <div className="buttons-container">
             <button onClick={sortByMostSoldTv}>Meest verkocht eerst</button>
             <button onClick={sortByCheapestTv}>Goedkoopste eerst</button>
@@ -111,7 +113,11 @@ function App() {
             {inventory.map((tvItem, index) => (
                 <div key={index} className="outer-tv-container">
                         <span className="tv-image-wrapper">
-                            <img className="tv-image" src={tvItem.sourceImg} alt={"inventory-tv"}/>
+                            {isOutOfStock(tvItem) ? (
+                                <img className="tv-image" src={outOfStockImg} alt={"out-of-stock"}/>
+                            ) : (
+                                <img className="tv-image" src={tvItem.sourceImg} alt={"inventory-tv"}/>
+                            )}
                         </span>
                     <article className="inner-tv-container">
                         <h1>{tvDescription(tvItem)}</h1>

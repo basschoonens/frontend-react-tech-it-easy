@@ -66,7 +66,7 @@
 }
 
 .outer-tv-container {
-    border: dashed grey;
+    border: dashed 1px grey;
     background-color: lightgrey;
     border-radius: 1rem;
 
@@ -91,7 +91,7 @@
 .tv-image{
     border-radius: 12px;
     width: 90%;
-    margin: 20px;
+    padding: 20px;
 }
 
 .inner-tv-container {
