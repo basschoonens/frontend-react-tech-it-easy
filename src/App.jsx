@@ -5,6 +5,7 @@ import tvPrice from "./helpers/tvPrice.js";
 import check from "./assets/check.png";
 import minus from "./assets/minus.png";
 import techItEasy from "./assets/tech_it_easy.png"
+import outOfStockImg from "./assets/out-of-stock.png";
 import totalSold from "./helpers/TotalSold.js";
 import totalPurchased from "./helpers/TotalPurchased.js";
 import totalStock from "./helpers/TotalStock.js";
@@ -36,6 +37,28 @@ function App() {
     });
         console.log(inventory)
 }
+
+    function sortByScreenSize() {
+        inventory.sort((a, b) => {
+            const maxSizeA = Math.max(...a.availableSizes);
+            const maxSizeB = Math.max(...b.availableSizes);
+            return maxSizeB - maxSizeA;
+        });
+        console.log(inventory);
+    }
+
+    // Show sold out tv's with out of stock image
+    // sort the array of tv's by original stock - sold = 0
+    // display the tv's that are out of stock
+
+    function showOutOfStockImage() {
+        inventory.forEach(tv => {
+            if (tv.originalStock - tv.sold === 0) {
+                tv.innerHTML += <img src={outOfStockImg} alt="out of stock"/>
+            }
+        })
+    }
+
 
     return (
     <main className="page-container">
@@ -82,6 +105,7 @@ function App() {
             <button onClick={sortByMostSoldTv}>Meest verkocht eerst</button>
             <button onClick={sortByCheapestTv}>Goedkoopste eerst</button>
             <button onClick={sortBySportsReady}>Meest geschikt voor sport eerst</button>
+            <button onClick={sortByScreenSize}>Sorteren op schermgrootte</button>
         </div>
         <div>
             {inventory.map((tvItem, index) => (
