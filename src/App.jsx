@@ -16,6 +16,27 @@ function App() {
         console.log(event.target.innerText);
     }
 
+    function sortByMostSoldTv() {
+        inventory.sort((a, b) => {
+            return b.sold - a.sold;
+        });
+        console.log(inventory);
+    }
+
+    function sortByCheapestTv() {
+        inventory.sort((a, b) => {
+            return a.price - b.price;
+        });
+        console.log(inventory)
+    }
+
+    function sortBySportsReady() {
+        inventory.sort((a, b) => {
+        return b.refreshRate - a.refreshRate;
+    });
+        console.log(inventory)
+}
+
     return (
     <main className="page-container">
         <span>
@@ -58,9 +79,9 @@ function App() {
             </article>
         </div>
         <div className="buttons-container">
-            <button onClick={handleClick}>Meest verkocht eerst</button>
-            <button onClick={handleClick}>Goedkoopste eerst</button>
-            <button onClick={handleClick}>Meest geschikt voor sport eerst</button>
+            <button onClick={sortByMostSoldTv}>Meest verkocht eerst</button>
+            <button onClick={sortByCheapestTv}>Goedkoopste eerst</button>
+            <button onClick={sortBySportsReady}>Meest geschikt voor sport eerst</button>
         </div>
         <div>
             {inventory.map((tvItem, index) => (
