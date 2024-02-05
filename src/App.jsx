@@ -47,11 +47,13 @@ function App() {
                 <h2>{tvPrice(bestSellingTv)}</h2>
                 <h3>{calAvailableSizes(bestSellingTv)}</h3>
                 <div className="features-container">
-                    <img className="icon" src={check}/><p>wifi</p>
-                    <img className="icon" src={minus}/><p>speech</p>
-                    <img className="icon" src={check}/><p>hdr</p>
-                    <img className="icon" src={check}/><p>bluetooth</p>
-                    <img className="icon" src={minus}/><p>ambilight</p>
+                    <ul>
+                        <li><img className="icon" src={check} alt="icon"/>wifi</li>
+                        <li><img className="icon" src={minus} alt="icon"/>speech</li>
+                        <li><img className="icon" src={check} alt="icon"/>hdr</li>
+                        <li><img className="icon" src={check} alt="icon"/>bluetooth</li>
+                        <li><img className="icon" src={minus} alt="icon"/>ambilight</li>
+                    </ul>
                 </div>
             </article>
         </div>
@@ -60,11 +62,6 @@ function App() {
             <button onClick={handleClick}>Goedkoopste eerst</button>
             <button onClick={handleClick}>Meest geschikt voor sport eerst</button>
         </div>
-        {/*<article>*/}
-        {/*    <ul>*/}
-        {/*        {inventory.map((inventoryList) => (<li key={inventoryList.type}>{inventoryList.brand}</li>))}*/}
-        {/*    </ul>*/}
-        {/*</article>*/}
         <div>
             {inventory.map((tvItem, index) => (
                 <div key={index} className="outer-tv-container">
@@ -79,8 +76,16 @@ function App() {
                             <ul>
                                 {tvItem.options.map((option, optionIndex) => (
                                     <li key={optionIndex}>
-                                        {option.name}
-                                        {optionIndex < option.length - 1 && ', '}
+                                        {option.applicable ? (
+                                            <span>
+                                                <img className="icon" src={check} alt="check"/>
+                                                {option.name}
+                                            </span> ) : (
+                                            <span>
+                                                <img className="icon" src={minus} alt="minus"/>
+                                                {option.name}
+                                            </span>
+                                        )}
                                     </li>
                                 ))}
                             </ul>
@@ -93,29 +98,3 @@ function App() {
 }
 
 export default App
-
-
-{/*<article className="inner-tv-container">*/
-}
-{/*<h1>{tvDescription(bestSellingTv)}</h1>*/
-}
-{/*<h2>{tvPrice(bestSellingTv)}</h2>*/
-}
-{/*<h3>{calAvailableSizes(bestSellingTv)}</h3>*/
-}
-{/*<div className="features-container">*/
-}
-{/*    <img className="icon" src={check}/><p>wifi</p>*/
-}
-{/*    <img className="icon" src={minus}/><p>speech</p>*/
-}
-{/*    <img className="icon" src={check}/><p>hdr</p>*/
-}
-{/*    <img className="icon" src={check}/><p>bluetooth</p>*/
-}
-{/*    <img className="icon" src={minus}/><p>ambilight</p>*/
-}
-{/*</div>*/
-}
-{/*</article>*/
-}
