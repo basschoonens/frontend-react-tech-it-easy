@@ -153,12 +153,12 @@ ul{
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        max-width: 320px;
+        min-width: 320px;
     }
 
     .inner-tv-container{
         align-items: center;
-        max-width: 320px;
+        min-width: 320px;
     }
 
     .features-container{
