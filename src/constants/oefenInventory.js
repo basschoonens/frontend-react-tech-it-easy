@@ -65,7 +65,7 @@ console.log(largeTv);
 // Log in de console
 
 export const ambilightTv = inventory.filter(tv => {
-    const hasAmbilight = tv.options.some(option => option.name === "ambiLight" && option.applicable);
+    const hasAmbilight = tv.options.some(option => option.name === "ambilight" && option.applicable);
     return hasAmbilight;
 });
 
