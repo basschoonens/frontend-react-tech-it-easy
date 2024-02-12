@@ -28,7 +28,7 @@ export const bestSellingTv = {
             applicable: true
         },
         {
-            name: "ambiLight",
+            name: "ambilight",
             applicable: false
         }
     ],
@@ -67,7 +67,7 @@ export let inventory = [
                 applicable: false,
             },
             {
-                name: "ambiLight",
+                name: "ambilight",
                 applicable: false,
             }
         ],
@@ -103,7 +103,7 @@ export let inventory = [
                 applicable: false,
             },
             {
-                name: "ambiLight",
+                name: "ambilight",
                 applicable: false,
             }
         ],
@@ -139,7 +139,7 @@ export let inventory = [
                 applicable: true,
             },
             {
-                name: "ambiLight",
+                name: "ambilight",
                 applicable: false,
             }
         ],
@@ -175,7 +175,7 @@ export let inventory = [
                 applicable: true,
             },
             {
-                name: "ambiLight",
+                name: "ambilight",
                 applicable: false,
             }
         ],
@@ -211,7 +211,7 @@ export let inventory = [
                 applicable: true,
             },
             {
-                name: "ambiLight",
+                name: "ambilight",
                 applicable: true,
             }
         ],
@@ -247,7 +247,7 @@ export let inventory = [
                 applicable: false,
             },
             {
-                name: "ambiLight",
+                name: "ambilight",
                 applicable: true,
             }
         ],
@@ -283,7 +283,7 @@ export let inventory = [
                 applicable: false,
             },
             {
-                name: "ambiLight",
+                name: "ambilight",
                 applicable: false,
             }
         ],
@@ -319,7 +319,7 @@ export let inventory = [
                 applicable: false,
             },
             {
-                name: "ambiLight",
+                name: "ambilight",
                 applicable: false,
             }
         ],
@@ -327,5 +327,4 @@ export let inventory = [
         sold: 8,
     },
 ];
-
 
